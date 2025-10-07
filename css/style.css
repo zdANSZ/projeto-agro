@@ -1,3 +1,5 @@
+/* VERSÃO FINAL E CORRIGIDA */
+
 :root {
   --primary-color: #7dad7d;
   --primary-color-light: #a7d7a7; 
@@ -110,6 +112,7 @@ a:hover {
 .card-body {
   padding: 20px;
   flex-grow: 1;
+  overflow: hidden; /* Ajuda a conter os elementos filhos */
 }
 
 .overview-card-body {
@@ -191,6 +194,7 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 12px;
   text-align: left;
+  vertical-align: middle; /* Garante alinhamento vertical */
 }
 
 .requirements-table thead {
