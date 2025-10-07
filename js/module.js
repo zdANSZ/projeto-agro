@@ -33,12 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const row = document.createElement('tr');
       const priorityClass = req.prioridade.toLowerCase();
 
+      // ALTERADO: Adicionado 'data-label' em cada célula (td)
       row.innerHTML = `
-        <td>${req.id}</td>
-        <td>${req.requisito}</td>
-        <td>${req.descricao}</td>
-        <td>${req.tipo}</td>
-        <td><span class="priority-badge priority-${priorityClass}">${req.prioridade}</span></td>
+        <td data-label="ID">${req.id}</td>
+        <td data-label="Requisito">${req.requisito}</td>
+        <td data-label="Descrição">${req.descricao}</td>
+        <td data-label="Tipo">${req.tipo}</td>
+        <td data-label="Prioridade"><span class="priority-badge priority-${priorityClass}">${req.prioridade}</span></td>
       `;
       tableBody.appendChild(row);
     });
