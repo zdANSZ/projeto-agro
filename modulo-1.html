@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Rural</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-link">
+      <img src="images/logo-agrotech.png" alt="Logo Nexus Rural" class="header-logo">
+      <h1>Nexus Rural</h1>
+    </a>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header" id="module-title"></div>
+      <div class="card-body">
+        <table class="requirements-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Requisito</th>
+              <th>Descrição</th>
+              <th>Tipo</th>
+              <th>Prioridade</th>
+            </tr>
+          </thead>
+          <tbody id="requirements-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    // MUDE O NÚMERO ABAIXO PARA CADA PÁGINA
+    const currentModuleId = "modulo-1"; 
+  </script>
+
+  <script src="js/data.js"></script>
+  <script src="js/module.js"></script>
+</body>
+</html>
