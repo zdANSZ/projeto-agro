@@ -179,6 +179,14 @@ a:hover {
   color: #a7d7a7;
 }
 
+/* --- ALTERAÇÃO AQUI --- */
+/* 1. Adicionamos um container para a tabela com overflow */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* A mágica acontece aqui! */
+  -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
+}
+
 .requirements-table {
   width: 100%;
   border-collapse: collapse;
@@ -189,6 +197,7 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 12px;
   text-align: left;
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas, mantendo a tabela larga */
 }
 
 .requirements-table thead {
@@ -219,48 +228,43 @@ a:hover {
   margin-top: 20px;
 }
 
+/* 2. O bloco @media anterior para tabelas responsivas foi REMOVIDO */
+/* Cole este código no FINAL do seu arquivo css/style.css */
+/* ... todo o seu CSS existente permanece aqui em cima ... */
 
-/* --- INÍCIO DOS NOVOS ESTILOS DE TABELA RESPONSIVA --- */
-@media screen and (max-width: 768px) {
-  .requirements-table thead {
-    display: none; /* 1. Esconde o cabeçalho original */
-  }
-
-  .requirements-table, .requirements-table tbody, .requirements-table tr, .requirements-table td {
-    display: block; /* 2. Faz todos os elementos da tabela se comportarem como blocos */
-    width: 100%;
-  }
-
-  .requirements-table tr {
-    margin-bottom: 15px; /* 3. Transforma cada linha em um "card" separado */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .requirements-table td {
-    display: flex; /* 4. Alinha o rótulo e o conteúdo da célula */
-    justify-content: space-between;
-    align-items: center;
-    text-align: right; /* Alinha o conteúdo da célula à direita */
-    padding-left: 50%; /* Dá espaço para o rótulo */
-    position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .requirements-table td:last-child {
-    border-bottom: 0;
-  }
-
-  .requirements-table td::before {
-    /* 5. A mágica: Pega o conteúdo do 'data-label' e o exibe como um rótulo */
-    content: attr(data-label);
-    position: absolute;
-    left: 15px;
-    width: 45%;
-    text-align: left;
-    font-weight: bold;
-    color: var(--primary-color-light);
-  }
+/* --- INÍCIO DOS NOVOS ESTILOS DE NAVEGAÇÃO DOS MÓDULOS --- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 10px 0; /* Espaçamento acima e abaixo dos botões */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
 }
-/* --- FIM DOS NOVOS ESTILOS DE TABELA RESPONSIVA --- */
+
+.nav-button {
+  background-color: var(--primary-color);
+  color: var(--light-color) !important; /* !important para sobrescrever a cor do .card a */
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-color-light);
+  color: var(--dark-text) !important;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.nav-button.prev {
+  /* Estilos específicos para o botão "anterior", se necessário */
+}
+
+.nav-button.next {
+  /* Estilos específicos para o botão "próximo", se necessário */
+}
+/* --- FIM DOS NOVOS ESTILOS DE NAVEGAÇÃO DOS MÓDULOS --- */
