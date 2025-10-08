@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+//document.addEventListener('DOMContentLoaded', function() {
   if (typeof currentModuleId === 'undefined') {
     console.error("A variável 'currentModuleId' não foi definida na página HTML.");
     return;

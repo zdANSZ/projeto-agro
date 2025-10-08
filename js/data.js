@@ -1,4 +1,4 @@
-const projectData = {
+//const projectData = {
   "modulo-0": {
     title: "Módulo 0: Estrutura da Fazenda e Configurações",
     requirements: [
